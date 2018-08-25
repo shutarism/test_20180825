@@ -10,11 +10,6 @@ import multiprocessing
 
 num_cores_use = 1
 
-#hesaff_threshold = "500"
-
-
-
-# @20180602 descriptor とそれ以外のデータは別ファイルに保存するよう変更
 def convert2h5(im_path, hesaff_path, sift_path, h5_desc_path, h5_attr_path):
     im = cv2.imread(im_path)
     height = im.shape[0]
@@ -85,7 +80,7 @@ def convert2h5(im_path, hesaff_path, sift_path, h5_desc_path, h5_attr_path):
     f.create_dataset('angles', data=angles)
     f.create_dataset('pas', data=pas)
     f.create_dataset('pbs', data=pbs)
-    f.create_dataset('pcs', data=pcs)   
+    f.create_dataset('pcs', data=pcs)
     f.create_dataset('height', data=height)
     f.create_dataset('width', data=width)
     f.flush()
@@ -111,7 +106,7 @@ def step3(ppm_path, hesaff_path, sift_path):
     print(cmd)
     os.system(cmd)
 
-# 
+#
 def step4(im_path, hesaff_path, sift_path, h5_desc_path, h5_attr_path):
     convert2h5(im_path, hesaff_path, sift_path, h5_desc_path, h5_attr_path)
 
@@ -207,9 +202,6 @@ if __name__=="__main__":
 
     ts = ["500"]
     for hesaff_threshold in ts:
-        #im_dir   = "/misc/tarasima/datasets/oxford100k/images_readable"
-        #ppm_dir  = "/misc/tarasima/datasets/oxford100k/ppms"
-        #feat_dir = "/misc/tarasima/datasets/oxford100k/feats_hesaff_t" + hesaff_threshold
         im_dir   = "../test_data/images"
         ppm_dir  = "../test_data/ppms"
         feat_dir = "../test_data/feats_hesaff_t" + hesaff_threshold
@@ -218,5 +210,3 @@ if __name__=="__main__":
         if not os.path.exists(feat_dir):
             os.makedirs(feat_dir)
         extract_feature_in_dir(im_dir, ppm_dir, feat_dir, hesaff_threshold)
-
-
