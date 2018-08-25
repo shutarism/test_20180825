@@ -210,9 +210,9 @@ if __name__=="__main__":
         #im_dir   = "/misc/tarasima/datasets/oxford100k/images_readable"
         #ppm_dir  = "/misc/tarasima/datasets/oxford100k/ppms"
         #feat_dir = "/misc/tarasima/datasets/oxford100k/feats_hesaff_t" + hesaff_threshold
-        im_dir   = "/root/src/fsm/src_test/images"
-        ppm_dir  = "/root/src/fsm/src_test/ppms"
-        feat_dir = "/root/src/fsm/src_test/feats_hesaff_t" + hesaff_threshold
+        im_dir   = "../test_data/images"
+        ppm_dir  = "../test_data/ppms"
+        feat_dir = "../test_data/feats_hesaff_t" + hesaff_threshold
         if not os.path.exists(ppm_dir):
             os.makedirs(ppm_dir)
         if not os.path.exists(feat_dir):

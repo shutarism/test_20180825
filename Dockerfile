@@ -55,7 +55,7 @@ RUN pyenv install 3.6.3
 RUN pyenv global 3.6.3
 RUN pyenv rehash
 #RUN /root/.pyenv/shims/pip install numpy scipy matplotlib pandas h5py networkx
-RUN /root/.pyenv/shims/pip install numpy scipy matplotlib pandas h5py networkx opencv-pytho
+RUN /root/.pyenv/shims/pip install numpy scipy matplotlib pandas h5py networkx opencv-python
 
 # codes
 RUN mkdir -p /root/src
